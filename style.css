@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
-:root{
-    --default_font : 'Ubuntu', sans-serif;
+:root {
+    --default_font: 'Ubuntu', sans-serif;
 }
 
-body{
+body {
     font-family: var(--default_font);
+    background-color: white;
 }
 
-.pop-up{
+.pop-up {
     background-color: darkblue;
     width: 18vw;
-    height: 15vh;
+    height: 19vh;
     position: absolute;
     left: 41vw;
     top: 42vh;
@@ -24,7 +25,7 @@ body{
     display: none;
 }
 
-.pop-up > span{
+.pop-up>span {
     font-size: x-large;
     display: block;
     text-align: center;
@@ -32,12 +33,12 @@ body{
     color: white;
 }
 
-.pop-up > button{
+.pop-up>button {
     width: 140px;
     height: 40px;
 }
 
-.input-fields{
+.input-fields {
     height: 25px;
     width: 210px;
     padding: 10px 10px;
@@ -55,7 +56,7 @@ body{
     margin-top: 14px;
     width: 231px;
     height: 46px;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     font-size: medium;
     background-color: greenyellow;
     border: 3px solid #73b016;
@@ -78,12 +79,12 @@ body{
     z-index: 0;
 }
 
-.m-24-left{
+.m-24-left {
     margin-left: 24px;
 }
 
-.gameTitle{
-    text-align: center; 
+.gameTitle {
+    text-align: center;
     font-size: xx-large;
     font-weight: 500;
     margin-bottom: 15px;
@@ -106,16 +107,16 @@ body{
     cursor: pointer;
 }
 
-.square{
+.square {
     border-left: 4px solid black;
     border-top: 4px solid black;
 }
 
-.square:last-child{
+.square:last-child {
     border-bottom: 4px solid black;
 }
 
-.col:last-child{
+.col:last-child {
     border-right: 4px solid black;
 }
 
@@ -127,14 +128,14 @@ body{
     border-radius: 50%;
 }
 
-.cross-1{
+.cross-1 {
     width: 50px;
     height: 8px;
     background-color: black;
     transform: rotate(45deg);
 }
 
-.cross-2{
+.cross-2 {
     position: absolute;
     width: 50px;
     height: 8px;
@@ -143,10 +144,20 @@ body{
 }
 
 
-.turn{
+.turn {
     margin-top: 30px;
     font-size: x-large;
     font-weight: 700;
     font-family: var(--default_font);
     letter-spacing: 1.2px;
+}
+
+@media (max-width: 360px) {
+    .pop-up{
+        width: 70vw;
+        height: 20vh;
+        position: absolute;
+        left: 18vw;
+        top: 36vh;
+    }
 }

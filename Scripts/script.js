@@ -25,7 +25,7 @@ document.querySelector("#submitBtn").addEventListener("click", (e) => {
         submit = true;
     }
     else {
-        restartGame();
+        restartGame("#submitBtn");
     }
 })
 
@@ -68,28 +68,14 @@ for (const i of squares) {
                     document.querySelector(".turn").innerHTML = "Turn : " + player2Name;
                     let x = winner("dot");
                     if (x == true) {
-                        document.querySelector(".turn").innerHTML = player1Name + " Won the game.";
-                        document.querySelector(".pop-up").children[0].innerHTML = player1Name + " Won.";
-                        document.querySelector(".pop-up").style.display = "flex";
-                        document.querySelector(".parent").style.opacity = "0.2";
-                        winningAudio.play();
-                        stopGame = true;
+                        displayResult(player1Name,true);
                     }
                     x = winner("cross-1");
                     if (x == true) {
-                        document.querySelector(".turn").innerHTML = player2Name + " Won the game.";
-                        document.querySelector(".pop-up").children[0].innerHTML = player2Name + " Won.";
-                        document.querySelector(".pop-up").style.display = "flex";
-                        document.querySelector(".parent").style.opacity = "0.2";
-                        winningAudio.play();
-                        stopGame = true;
+                        displayResult(player2Name,true);
                     }
                     else if(x == "Tie"){
-                        document.querySelector(".turn").innerHTML = "Tie";
-                        document.querySelector(".pop-up").children[0].innerHTML = "Tie";
-                        document.querySelector(".pop-up").style.display = "flex";
-                        document.querySelector(".parent").style.opacity = "0.2";
-                        stopGame = true;
+                        displayResult("Tie",false);
                     }
                 }
                 else {
@@ -106,28 +92,14 @@ for (const i of squares) {
                     document.querySelector(".turn").innerHTML = "Turn : " + player1Name;
                     let x = winner("dot");
                     if (x == true) {
-                        document.querySelector(".turn").innerHTML = player1Name + " Won the game."
-                        document.querySelector(".pop-up").children[0].innerHTML = player1Name + " Won.";
-                        document.querySelector(".pop-up").style.display = "flex";
-                        document.querySelector(".parent").style.opacity = "0.2";
-                        winningAudio.play();
-                        stopGame = true;
+                        displayResult(player1Name,true);
                     }
                     x = winner("cross-1");
                     if (x == true) {
-                        document.querySelector(".turn").innerHTML = player2Name + " Won the game."
-                        document.querySelector(".pop-up").children[0].innerHTML = player2Name + " Won.";
-                        document.querySelector(".pop-up").style.display = "flex";
-                        document.querySelector(".parent").style.opacity = "0.2";
-                        winningAudio.play();
-                        stopGame = true;
+                        displayResult(player2Name,true);
                     }
                     else if(x == "Tie"){
-                        document.querySelector(".turn").innerHTML = "Tie";
-                        document.querySelector(".pop-up").children[0].innerHTML = "Tie";
-                        document.querySelector(".pop-up").style.display = "flex";
-                        document.querySelector(".parent").style.opacity = "0.2";
-                        stopGame = true;
+                        displayResult("Tie",false);
                     }
                 }
             }

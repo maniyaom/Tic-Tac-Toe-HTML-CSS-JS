@@ -71,18 +71,18 @@ function winner(name) {
         }
     }
     value = checkTie();
-    if(value == true){
+    if (value == true) {
         return "Tie";
     }
-    else{
+    else {
         return false;
     }
 }
 
-function checkTie(){
+function checkTie() {
     let value = true;
-    for(const i of squares){
-        if(i.innerHTML == ''){
+    for (const i of squares) {
+        if (i.innerHTML == '') {
             value = false;
             return false;
         }
@@ -90,7 +90,24 @@ function checkTie(){
     return value;
 }
 
-function restartGame() {
+function displayResult(name, value) {
+    console.log(value);
+    if (value == true) {
+        document.querySelector(".turn").innerHTML = name + " Won the game.";
+        document.querySelector(".pop-up").children[0].innerHTML = name + " Won.";
+    }
+    else {
+        document.querySelector(".turn").innerHTML = "Tie";
+        document.querySelector(".pop-up").children[0].innerHTML = "Tie";
+    }
+    document.querySelector(".pop-up").style.display = "flex";
+    document.querySelector(".parent").style.opacity = "0.2";
+    stopGame = true;
+    winningAudio.play();
+}
+
+function restartGame(id) {
+    clickEffect(id)
     document.querySelector(".pop-up").style.display = "none";
     document.querySelector(".parent").style.opacity = "1";
     document.querySelector(".turn").innerHTML = "Turn : " + player1Name;
