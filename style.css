@@ -4,10 +4,28 @@
     --default_font: 'Ubuntu', sans-serif;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: var(--default_font);
     background-color: white;
 }
+
+.header{
+    background-color: black;
+    color: white;
+    height: 60px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .pop-up {
     background-color: darkblue;
