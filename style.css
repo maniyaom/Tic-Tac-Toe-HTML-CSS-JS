@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root{
+    --default_font : 'Ubuntu', sans-serif;
+}
+
+body{
+    font-family: var(--default_font);
+}
+
+.input-fields{
+    height: 25px;
+    width: 210px;
+    padding: 10px 10px;
+    outline: none;
+    border: 2px solid #73b016;
+    border-radius: 5px;
+    display: block;
+    margin-top: 14px;
+    font-family: var(--default_font);
+    font-size: 16px;
+    letter-spacing: 1.2px;
+}
+
+.btn {
+    margin-top: 14px;
+    width: 231px;
+    height: 46px;
+    margin-right: 20px;
+    font-size: medium;
+    background-color: greenyellow;
+    border: 3px solid #73b016;
+    border-radius: 5px;
+    cursor: pointer;
+    /* box-shadow: 1px 1px 4px 1px #73b016; */
+    outline: none;
+    font-family: Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1.1px;
+}
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.m-24-left{
+    margin-left: 24px;
+}
+
+.gameTitle{
+    text-align: center; 
+    font-size: xx-large;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.main {
+    height: 240px;
+    width: 240px;
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.square{
+    border-left: 4px solid black;
+    border-top: 4px solid black;
+}
+
+.square:last-child{
+    border-bottom: 4px solid black;
+}
+
+.col:last-child{
+    border-right: 4px solid black;
+}
+
+.dot {
+    width: 35px;
+    height: 35px;
+    border: 7px solid black;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.cross-1{
+    width: 50px;
+    height: 8px;
+    background-color: black;
+    transform: rotate(45deg);
+}
+
+.cross-2{
+    position: absolute;
+    width: 50px;
+    height: 8px;
+    background-color: black;
+    transform: rotate(-45deg);
+}
+
+
+.turn{
+    margin-top: 30px;
+    font-size: x-large;
+    font-weight: 700;
+    font-family: var(--default_font);
+    letter-spacing: 1.2px;
+}
