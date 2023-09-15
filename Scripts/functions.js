@@ -102,6 +102,7 @@ function displayResult(name, value) {
     }
     document.querySelector(".pop-up").style.display = "flex";
     document.querySelector(".parent").style.opacity = "0.2";
+    document.querySelector(".header").style.opacity = "0.2";
     stopGame = true;
     winningAudio.play();
 }
@@ -110,6 +111,7 @@ function restartGame(id) {
     clickEffect(id)
     document.querySelector(".pop-up").style.display = "none";
     document.querySelector(".parent").style.opacity = "1";
+    document.querySelector(".header").style.opacity = "1";
     document.querySelector(".turn").innerHTML = "Turn : " + player1Name;
     player1 = true;
     stopGame = false;
