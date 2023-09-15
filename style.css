@@ -8,6 +8,35 @@ body{
     font-family: var(--default_font);
 }
 
+.pop-up{
+    background-color: darkblue;
+    width: 18vw;
+    height: 15vh;
+    position: absolute;
+    left: 41vw;
+    top: 42vh;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+    display: none;
+}
+
+.pop-up > span{
+    font-size: x-large;
+    display: block;
+    text-align: center;
+    letter-spacing: 1.1px;
+    color: white;
+}
+
+.pop-up > button{
+    width: 140px;
+    height: 40px;
+}
+
 .input-fields{
     height: 25px;
     width: 210px;
@@ -46,6 +75,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    z-index: 0;
 }
 
 .m-24-left{

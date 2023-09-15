@@ -91,10 +91,13 @@ function checkTie(){
 }
 
 function restartGame() {
+    document.querySelector(".pop-up").style.display = "none";
+    document.querySelector(".parent").style.opacity = "1";
+    document.querySelector(".turn").innerHTML = "Turn : " + player1Name;
+    player1 = true;
+    stopGame = false;
     for (const i of squares) {
         i.innerHTML = ""
         i.removeAttribute("style");
-        player1 = true;
-        stopGame = false;
     }
 }
