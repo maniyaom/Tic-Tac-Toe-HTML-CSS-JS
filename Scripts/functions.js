@@ -91,7 +91,6 @@ function checkTie() {
 }
 
 function displayResult(name, value) {
-    console.log(value);
     if (value == true) {
         document.querySelector(".turn").innerHTML = name + " Won the game.";
         document.querySelector(".pop-up").children[0].innerHTML = name + " Won.";
@@ -100,6 +99,7 @@ function displayResult(name, value) {
         document.querySelector(".turn").innerHTML = "Tie";
         document.querySelector(".pop-up").children[0].innerHTML = "Tie";
     }
+    alertBox = true;
     document.querySelector(".pop-up").style.display = "flex";
     document.querySelector(".parent").style.opacity = "0.2";
     document.querySelector(".header").style.opacity = "0.2";
@@ -115,6 +115,7 @@ function restartGame(id) {
     document.querySelector(".turn").innerHTML = "Turn : " + player1Name;
     player1 = true;
     stopGame = false;
+    alertBox = false;
     for (const i of squares) {
         i.innerHTML = ""
         i.removeAttribute("style");

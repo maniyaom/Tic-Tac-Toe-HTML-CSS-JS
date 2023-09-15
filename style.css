@@ -4,7 +4,7 @@
     --default_font: 'Ubuntu', sans-serif;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -14,7 +14,7 @@ body {
     background-color: white;
 }
 
-.header{
+.header {
     background-color: black;
     color: white;
     height: 60px;
@@ -174,11 +174,40 @@ body {
 }
 
 @media (max-width: 360px) {
-    .pop-up{
+    .pop-up {
         width: 70vw;
         height: 20vh;
         position: absolute;
         left: 18vw;
         top: 36vh;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    .square, .square:last-child, .col:last-child, .dot, .btn {
+        border-color: white;
+        color: black;
+    }
+
+    .cross-1, .cross-2, .btn, .pop-up>span {
+        background-color: white;
+        color: black;
+    }
+
+    .pop-up{
+        background-color: white;
+    }
+    .pop-up > button{
+        background-color: black;
+        color: white;
+    }
+
+    .input-fields{
+        border: none;
     }
 }

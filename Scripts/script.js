@@ -3,11 +3,11 @@ let player2Name;
 let player1 = true;  // Keep track of the turn of the player
 let stopGame = true;  // Stop the game
 let submit = false;
+let alertBox = false;
 let squares = document.querySelectorAll(".square");
 const winningAudio = new Audio('media/winning-sound.wav');
 
-document.querySelector("#submitBtn").addEventListener("click", (e) => {
-    e.preventDefault();
+function clickOnSubmit() {
     player1Name = document.querySelector("#player1").value;
     player2Name = document.querySelector("#player2").value;
 
@@ -18,7 +18,7 @@ document.querySelector("#submitBtn").addEventListener("click", (e) => {
         player2Name = "Player - 2";
     }
     document.querySelector(".turn").innerHTML = "Turn : " + player1Name;
-    
+
     if (submit == false) {
         stopGame = false;
         document.querySelector("#submitBtn").innerHTML = "Restart";
@@ -26,6 +26,21 @@ document.querySelector("#submitBtn").addEventListener("click", (e) => {
     }
     else {
         restartGame("#submitBtn");
+    }
+}
+
+document.querySelector("#submitBtn").addEventListener("click", (e) => {
+    e.preventDefault();
+    clickOnSubmit();
+})
+
+document.querySelector('body').addEventListener("keypress",function(event){
+    event.preventDefault();
+    if(event.key == 'Enter' && alertBox == false){
+        clickOnSubmit();
+    }
+    else if(event.key == 'Enter' && alertBox == true){
+        restartGame("#replyBtn");
     }
 })
 
@@ -68,14 +83,14 @@ for (const i of squares) {
                     document.querySelector(".turn").innerHTML = "Turn : " + player2Name;
                     let x = winner("dot");
                     if (x == true) {
-                        displayResult(player1Name,true);
+                        displayResult(player1Name, true);
                     }
                     x = winner("cross-1");
                     if (x == true) {
-                        displayResult(player2Name,true);
+                        displayResult(player2Name, true);
                     }
-                    else if(x == "Tie"){
-                        displayResult("Tie",false);
+                    else if (x == "Tie") {
+                        displayResult("Tie", false);
                     }
                 }
                 else {
@@ -92,14 +107,14 @@ for (const i of squares) {
                     document.querySelector(".turn").innerHTML = "Turn : " + player1Name;
                     let x = winner("dot");
                     if (x == true) {
-                        displayResult(player1Name,true);
+                        displayResult(player1Name, true);
                     }
                     x = winner("cross-1");
                     if (x == true) {
-                        displayResult(player2Name,true);
+                        displayResult(player2Name, true);
                     }
-                    else if(x == "Tie"){
-                        displayResult("Tie",false);
+                    else if (x == "Tie") {
+                        displayResult("Tie", false);
                     }
                 }
             }
