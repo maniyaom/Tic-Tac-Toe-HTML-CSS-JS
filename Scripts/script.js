@@ -4,8 +4,15 @@ let player1 = true;  // Keep track of the turn of the player
 let stopGame = true;  // Stop the game
 let submit = false;
 let alertBox = false;
+let toggleDark = false;
 let squares = document.querySelectorAll(".square");
 const winningAudio = new Audio('media/winning-sound.wav');
+let colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if(colorScheme == true){
+    toggle();
+}
+
 
 function clickOnSubmit() {
     player1Name = document.querySelector("#player1").value;

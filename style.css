@@ -11,7 +11,6 @@
 
 body {
     font-family: var(--default_font);
-    background-color: white;
 }
 
 .header {
@@ -29,6 +28,37 @@ body {
     top: 0px;
 }
 
+.toggleDarkModeDiv{
+    height: 70px;
+    position: fixed;
+    right: 10px;
+    margin-top: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.switch{
+    display: inline-block;
+    background-color: black;
+    border: 3px solid black;
+    height: 30px;
+    width: 49px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+.switch > div{
+    background-color: white;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-left: 5px;
+    transition: 0.2s ease-in-out;
+}
 
 .pop-up {
     background-color: darkblue;
@@ -129,16 +159,10 @@ body {
 }
 
 .square {
-    border-left: 4px solid black;
-    border-top: 4px solid black;
-}
-
-.square:last-child {
-    border-bottom: 4px solid black;
-}
-
-.col:last-child {
-    border-right: 4px solid black;
+    border: 4px solid black;
+    float: left;
+    margin-top: -4px;
+    margin-left: -4px;
 }
 
 .dot {
@@ -189,25 +213,19 @@ body {
         color: white;
     }
 
-    .square, .square:last-child, .col:last-child, .dot, .btn {
+    .square, .square:last-child, .col:last-child, .dot, .btn, .switch {
         border-color: white;
         color: black;
     }
 
-    .cross-1, .cross-2, .btn, .pop-up>span {
+    .cross-1, .cross-2, .btn, .pop-up>span, .pop-up, .input-fields{
         background-color: white;
         color: black;
+        border: none;
     }
 
-    .pop-up{
-        background-color: white;
-    }
     .pop-up > button{
         background-color: black;
         color: white;
-    }
-
-    .input-fields{
-        border: none;
     }
 }
