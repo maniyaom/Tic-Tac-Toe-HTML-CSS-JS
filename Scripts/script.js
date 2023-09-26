@@ -42,12 +42,14 @@ document.querySelector("#submitBtn").addEventListener("click", (e) => {
 })
 
 document.querySelector('body').addEventListener("keypress",function(event){
-    event.preventDefault();
-    if(event.key == 'Enter' && alertBox == false){
-        clickOnSubmit();
-    }
-    else if(event.key == 'Enter' && alertBox == true){
-        restartGame("#replyBtn");
+    if(event.key == 'Enter'){
+        event.preventDefault();
+        if(event.key == 'Enter' && alertBox == false){
+            clickOnSubmit();
+        }
+        else if(event.key == 'Enter' && alertBox == true){
+            restartGame("#replyBtn");
+        }
     }
 })
 
