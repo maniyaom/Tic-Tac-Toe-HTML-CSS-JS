@@ -91,14 +91,14 @@ for (const i of squares) {
                     i.setAttribute("style", "cursor : revert");
                     document.querySelector(".turn").innerHTML = "Turn : " + player2Name;
                     let x = winner("dot");
+                    let y = winner("cross-1");
                     if (x == true) {
                         displayResult(player1Name, true);
                     }
-                    x = winner("cross-1");
-                    if (x == true) {
+                    else if (x == true) {
                         displayResult(player2Name, true);
                     }
-                    else if (x == "Tie") {
+                    else if (y == "Tie") {
                         displayResult("Tie", false);
                     }
                 }
@@ -115,14 +115,14 @@ for (const i of squares) {
                     i.setAttribute("style", "cursor : revert");
                     document.querySelector(".turn").innerHTML = "Turn : " + player1Name;
                     let x = winner("dot");
+                    let y = winner("cross-1");
                     if (x == true) {
                         displayResult(player1Name, true);
                     }
-                    x = winner("cross-1");
-                    if (x == true) {
+                    else if (y == true) {
                         displayResult(player2Name, true);
                     }
-                    else if (x == "Tie") {
+                    else if (y == "Tie") {
                         displayResult("Tie", false);
                     }
                 }
