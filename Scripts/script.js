@@ -84,11 +84,8 @@ for (const i of squares) {
             }
             else {
                 if (player1 == true) {
-                    let node = document.createElement("span");
-                    node.setAttribute("class", "dot");
-                    i.appendChild(node)
+                    addCircle(i)
                     player1 = false;
-                    i.setAttribute("style", "cursor : revert");
                     document.querySelector(".turn").innerHTML = "Turn : " + player2Name;
                     let x = winner("dot");
                     let y = winner("cross-1");
@@ -103,16 +100,8 @@ for (const i of squares) {
                     }
                 }
                 else {
-                    let node1 = document.createElement("span");
-                    node1.setAttribute("class", "cross-1");
-
-                    let node2 = document.createElement("span");
-                    node2.setAttribute("class", "cross-2");
-
-                    i.appendChild(node1);
-                    i.appendChild(node2);
+                    addCross(i);
                     player1 = true;
-                    i.setAttribute("style", "cursor : revert");
                     document.querySelector(".turn").innerHTML = "Turn : " + player1Name;
                     let x = winner("dot");
                     let y = winner("cross-1");

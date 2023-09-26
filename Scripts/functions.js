@@ -102,6 +102,23 @@ function checkTie() {
     return value;
 }
 
+function addCircle(i){
+    let node = document.createElement("span");
+    node.setAttribute("class", "dot");
+    i.appendChild(node)
+    i.setAttribute("style", "cursor : revert");
+}
+
+function addCross(i){
+    let node1 = document.createElement("span");
+    node1.setAttribute("class", "cross-1");
+    let node2 = document.createElement("span");
+    node2.setAttribute("class", "cross-2");
+    i.appendChild(node1);
+    i.appendChild(node2);
+    i.setAttribute("style", "cursor : revert");
+}
+
 function displayResult(name, value) {
     if (value == true) {
         document.querySelector(".turn").innerHTML = name + " Won the game.";
