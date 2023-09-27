@@ -11,17 +11,17 @@ function clickEffect(id) {
     });
 }
 
-function toggle() {
-    if (toggleDark == false) {
-        document.querySelector(".switch").children[0].style.marginLeft = "25px";
-        document.querySelector(".switch").children[0].style.backgroundColor = "gray";
-        toggleDark = true;
-    }
-    else {
-        document.querySelector(".switch").children[0].removeAttribute("style");
-        toggleDark = false;
-    }
-}
+// function toggle() {
+//     if (toggleDark == false) {
+//         document.querySelector(".switch").children[0].style.marginLeft = "25px";
+//         document.querySelector(".switch").children[0].style.backgroundColor = "gray";
+//         toggleDark = true;
+//     }
+//     else {
+//         document.querySelector(".switch").children[0].removeAttribute("style");
+//         toggleDark = false;
+//     }
+// }
 
 function winner(name) {
     let col = document.querySelectorAll(".col");

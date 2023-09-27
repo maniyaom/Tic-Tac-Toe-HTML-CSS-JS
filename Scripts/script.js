@@ -14,9 +14,10 @@ let squares = document.querySelectorAll(".square");
 const winningAudio = new Audio('media/winning-sound.wav');
 let colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-if(colorScheme == true){
-    toggle();
-}
+// Switch button for Dark Mode
+// if(colorScheme == true){
+//     toggle();
+// }
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('keydown', event => {
