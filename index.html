@@ -26,12 +26,22 @@
     </div>
     <div class="parent">
         <span class="gameTitle">Tic - Tac - Toe</span>
-        <div class="form-div m-24-left">
+        <div id="user-choice-pvp-bot">
+            <button class="btn" id="pvp-btn" onclick="clickEffect('#pvp-btn')">Player Vs Player</button>
+            <button class="btn" id="bot-btn" onclick="clickEffect('#bot-btn')">Play With Bot</button>
+        </div>
+        <div class="form-div m-24-left" id="pvp-form">
             <form action="index.php" method="POST" autocomplete="off">
                 <input type="text" name="player1" id="player1" placeholder="Player - 1 Name" class="input-fields">
                 <input type="text" name="player2" id="player2" placeholder="Player - 2 Name" class="input-fields">
+                <select name="botlevel" id="bot-level-selection-box" class="input-fields" onchange="changeLevel()">
+                    <option value="Easy">Easy</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
                 <button type="submit" class="btn" id="submitBtn" onclick="clickEffect('#submitBtn')">Start</button>
             </form>
+            <span id="easy-medium-hard-text"></span>
         </div>
 
         <div class="main">
