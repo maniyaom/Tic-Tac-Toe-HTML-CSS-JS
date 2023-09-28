@@ -9,6 +9,8 @@ let pvp = undefined; // Player Vs Player
 let player1Symbol = 'dot';
 let player2Symbol = 'cross-1';
 let botLevel;
+let player1Score = 0;
+let player2Score = 0;
 
 let squares = document.querySelectorAll(".square");
 const winningAudio = new Audio('media/winning-sound.wav');
@@ -19,12 +21,12 @@ let colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 //     toggle();
 // }
 
-document.addEventListener('contextmenu', event => event.preventDefault());
-document.addEventListener('keydown', event => {
-    if(event.key != 'Enter'){
-        event.preventDefault();
-    }
-});
+// document.addEventListener('contextmenu', event => event.preventDefault());
+// document.addEventListener('keydown', event => {
+//     if(event.key != 'Enter'){
+//         event.preventDefault();
+//     }
+// });
 
 function clickOnSubmit() {
     player1Name = document.querySelector("#player1").value;
@@ -90,17 +92,17 @@ document.querySelector("#bot-btn").addEventListener("click",(event) => {
     pvp = false;
 })
 
-document.querySelector('body').addEventListener("keypress",function(event){
-    if(event.key == 'Enter'){
-        event.preventDefault();
-        if(event.key == 'Enter' && alertBox == false){
-            clickOnSubmit();
-        }
-        else if(event.key == 'Enter' && alertBox == true){
-            restartGame("#replyBtn");
-        }
-    }
-})
+// document.querySelector('body').addEventListener("keypress",function(event){
+//     if(event.key == 'Enter'){
+//         event.preventDefault();
+//         if(event.key == 'Enter' && alertBox == false){
+//             clickOnSubmit();
+//         }
+//         else if(event.key == 'Enter' && alertBox == true){
+//             restartGame("#replyBtn");
+//         }
+//     }
+// })
 
 let c = 'a'
 let d = 1
@@ -119,60 +121,44 @@ for (const i of squares) {
 for (const i of squares) {
     i.addEventListener("click", (event) => {
         if (stopGame == false) {
-            if (i.hasChildNodes()) {
-                if (i.firstChild.tagName == "SPAN") {
-                    console.log("Skip")
-                }
-            }
-            else {
+            if(!(i.hasChildNodes())) {
+                let x = undefined;
                 if (player1 == true) {
                     addCircle(i)
                     player1 = false;
                     document.querySelector(".turn").innerHTML = "Turn : " + player2Name;
-                    let x = winner(player1Symbol);
-                    let y = winner(player2Symbol);
+                    x = winner(player1Symbol);
                     if (x == true) {
                         displayResult(player1Name, true);
                     }
-                    else if (y == true) {
-                        displayResult(player2Name, true);
-                    }
-                    else if (y == "Draw") {
+                    else if (x == "Draw") {
                         displayResult("Draw", false);
                     }
                     
                     // Uncomment this section for play with bot
-                    if(x != true && y != true && y != "Draw" && pvp == false){
+                    if(x != true && x != "Draw" && (pvp == false)){
                         document.querySelector(".turn").innerHTML = "Turn : " + player1Name;
                         runBot(level = botLevel);
-                    }
                     
-                    x = winner(player1Symbol);
-                    y = winner(player2Symbol);
-                    if (x == true) {
-                        displayResult(player1Name, true);
-                    }
-                    else if (y == true) {
-                        displayResult(player2Name, true);
-                    }
-                    else if (y == "Draw") {
-                        displayResult("Draw", false);
+                        x = winner(player2Symbol);
+                        if (x == true) {
+                            displayResult(player2Name, true);
+                        }
+                        else if (x == "Draw") {
+                            displayResult("Draw", false);
+                        }
                     }
                 }
 
-                else if(pvp == true){
+                else if(pvp == true && (x != true || x != "Draw")){
                     addCross(i);
                     player1 = true;
                     document.querySelector(".turn").innerHTML = "Turn : " + player1Name;
-                    let x = winner(player1Symbol);
-                    let y = winner(player2Symbol);
+                    let x = winner(player2Symbol);
                     if (x == true) {
-                        displayResult(player1Name, true);
-                    }
-                    else if (y == true) {
                         displayResult(player2Name, true);
                     }
-                    else if (y == "Draw") {
+                    else if (x == "Draw") {
                         displayResult("Draw", false);
                     }
                 }

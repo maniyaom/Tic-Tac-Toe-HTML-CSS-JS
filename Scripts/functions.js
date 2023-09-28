@@ -140,14 +140,19 @@ function changeLevel(){
         
         else if(botLevel == "Hard")
             botLevel = 2;
-        console.log(botLevel);
     }
 }
 
 function displayResult(name, value) {
     if (value == true) {
+        document.querySelector("#score-board").style.display = "block";
         document.querySelector(".turn").innerHTML = name + " Won the game.";
         document.querySelector(".pop-up").children[0].innerHTML = name + " Won.";
+        if(name == player1Name)
+            player1Score++;
+        else if(name == player2Name)
+            player2Score++;
+        document.querySelector("#score-board").innerHTML = "<b>Score Board</b><br>"+player1Name + " : " +player1Score+"<br>"+player2Name+" : "+player2Score;
     }
     else {
         document.querySelector(".turn").innerHTML = "Draw";
@@ -156,7 +161,6 @@ function displayResult(name, value) {
     alertBox = true;
     document.querySelector(".pop-up").style.display = "flex";
     document.querySelector(".parent").style.opacity = "0.2";
-    document.querySelector(".header").style.opacity = "0.2";
     stopGame = true;
     winningAudio.play();
 }
@@ -166,7 +170,6 @@ function restartGame(id) {
         clickEffect(id)
         document.querySelector(".pop-up").style.display = "none";
         document.querySelector(".parent").style.opacity = "1";
-        document.querySelector(".header").style.opacity = "1";
         document.querySelector(".turn").innerHTML = "Turn : " + player1Name;
         player1 = true;
         stopGame = false;
