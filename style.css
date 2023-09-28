@@ -268,4 +268,7 @@ body {
         border-color: white;
         color: white;
     }
+    .turn{
+        color: white;
+    }
 }

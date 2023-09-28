@@ -22,11 +22,14 @@ let colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 // }
 
 // Restrict Right Click on Web Page
+// ctrl = 17
+// shift = 16
+// i = 73
+// f12 = 123
 document.addEventListener('contextmenu', event => event.preventDefault());
-document.addEventListener('keydown', event => {
-    if(event.key != 'Enter'){
+document.addEventListener("keydown", (event) => {
+    if (event.which == 123)
         event.preventDefault();
-    }
 });
 
 function clickOnSubmit() {
