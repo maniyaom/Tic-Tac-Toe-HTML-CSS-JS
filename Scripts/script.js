@@ -21,12 +21,13 @@ let colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 //     toggle();
 // }
 
-// document.addEventListener('contextmenu', event => event.preventDefault());
-// document.addEventListener('keydown', event => {
-//     if(event.key != 'Enter'){
-//         event.preventDefault();
-//     }
-// });
+// Restrict Right Click on Web Page
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('keydown', event => {
+    if(event.key != 'Enter'){
+        event.preventDefault();
+    }
+});
 
 function clickOnSubmit() {
     player1Name = document.querySelector("#player1").value;
@@ -92,17 +93,17 @@ document.querySelector("#bot-btn").addEventListener("click",(event) => {
     pvp = false;
 })
 
-// document.querySelector('body').addEventListener("keypress",function(event){
-//     if(event.key == 'Enter'){
-//         event.preventDefault();
-//         if(event.key == 'Enter' && alertBox == false){
-//             clickOnSubmit();
-//         }
-//         else if(event.key == 'Enter' && alertBox == true){
-//             restartGame("#replyBtn");
-//         }
-//     }
-// })
+document.querySelector('body').addEventListener("keypress",function(event){
+    if(event.key == 'Enter'){
+        event.preventDefault();
+        if(event.key == 'Enter' && alertBox == false){
+            clickOnSubmit();
+        }
+        else if(event.key == 'Enter' && alertBox == true){
+            restartGame("#replyBtn");
+        }
+    }
+})
 
 let c = 'a'
 let d = 1
